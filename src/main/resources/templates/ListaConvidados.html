@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		
+		<title>Lista de Convidados</title>
+		<link rel="icon" href="/static/images/iconsite.ico" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <Script type="text/javascript">
+    
+    window.onload = function start() { 
+    	document.getElementById("busca").focus(); 
+    	document.getElementById("busca").value=document.getElementById("busca").value; 
+    } 
+    
+    function Buscador(){
+		document.getElementById("disparaBusca").click();
+    	
+    }
+     
+	    
+	</Script>
+	
+	</head>
+	
+	<body>   	
+		<div class="panel panel-default" style="margin: 10px">
+			<div class="panel-heading">
+				<h1 class="panel-title">Lista de convidados</h1>
+			</div>
+			<div class="panel-body">
+				<form method="GET" th:object="${pesquisa}" th:action="@{/convidados}" class="form-inline" style="margin: 20px 0">
+					<input type="text" autofocus="autofocus" class="form-control" onkeyup  ="Buscador()"  id="busca" th:field="*{palavra}" placeholder="PESQUISA"/>
+					<input type="submit" style="visibility: hidden;" id="disparaBusca"/>
+				</form>
+				<form class="form-inline" method="POST" th:object="${convidadoView}" th:action="@{/convidados}"  style="margin: 20px 0">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Nome" th:field="*{nome}"/>
+						<input type="text" class="form-control" placeholder="Nº Acompanhantes" th:field="*{num}"/>
+						<button type="submit" class="btn btn-primary">Adicionar</button>
+					</div>
+				</form>
+				<table class="table">
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>Quantidade Acompanhantes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="convidado : ${convidados}">
+								<td th:text="${convidado.nome}"></td>
+								<td th:text="${convidado.acompanhantes}"></td>
+							</tr>
+							<tr>
+								<td colspan="6" th:if="${#lists.isEmpty(convidados)}">Nenhum convidado encontrado</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+		</div>
+	</body>	
+</html>
