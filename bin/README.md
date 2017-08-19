@@ -7,7 +7,6 @@
 - Heroku 
 - Postgresql
 
-
 ___
 
 [Heroku Link Lista Convidados](http://awtj-gestao-festa.herokuapp.com/convidados)
