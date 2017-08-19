@@ -1,4 +1,5 @@
-# Gestao-Festa - 1ª Aplicação em nuvem
+# Gestao-Festa - 1ª Aplicação em nuvem 
+[![Build Status](https://travis-ci.org/antoniogabrielti/gestao-festa.svg?branch=master)](https://travis-ci.org/antoniogabrielti/gestao-festa)
 ### Tech Stack:
 - Spring Boot
 - Thymeleaf
