@@ -5,10 +5,6 @@ deploy:
   app: ajpp-festa-gerencia
   api_key:
     secure: 7e079245-358d-438e-9a2e-0e21a2f4fb06
-branches:
-      - master  
-script:
-  - mvn clean package
-  - mvn cobertura:cobertura -Dcobertura.report.format=xml
-  - mvn org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true
-  - sonar-scanner  
+install:
+- mvn -N io.takari:maven:wrapper
+- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V 
