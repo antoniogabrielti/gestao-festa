@@ -4,7 +4,11 @@ deploy:
   provider: heroku
   app: ajpp-festa-gerencia
   api_key:
-    secure: 7e079245-358d-438e-9a2e-0e21a2f4fb06
+    secure: bDUsoJ8/jqFSPcbQENaOJtnjZc26Zp3Pj77CUpuFgcYReRr4IrmI54qJlTCvdShb2xzz/QgjMNOVW5OVbYNgmHnzxTHGVx3o+gDet4Jbmr0Y4k0gcNA7LpjYWnbv0agAMqWf9H2mvx0CTsr
+XB8xP4ovNFpemR7m7I53mQ6odGVqPlIgKqgFCwYpjo+EefNVYbY+HewsXG7iGAkIwgoXCc5cpaO4ng365iYf9tzSRMwx3DaGlIVyHsFIHiW9Gyw8IhO7vUS82K/EabHbH0GAQyYqhIr1uoAVbINasuDB4p
+LhbcfGK2+DW5FWlk236x+kOwGc74sqCt+SYcIvJABkhEjKQtlKOqc7DL2W53Bu+Q08eXSTO0//Oe/xRsB2Mel7/lkGCpzDT/FyTpheKw8Dx+hROCoqppphpGy1OYyQGNz5atXuxPVaKy5Fze8gDwlS3m+O
+OAD5AHRw1eTm1Nj3pDbembNPZktn4wm4wM4FgZ0J20AjPyQl5SynWll5iV4yZabYYeAno9fjqTELK62Bbcvli2FOto8t8YX2Psl9OdFze65RKPQPSTmh92ClHPIaA51RPAb67mGMyewmwnE/Qd7752IJSU
+0WL0mLriYaqej2Vncb3q7chlqKeY8Njtk0/srWatyf3RWIjz2JOuhUBR6RM8zpKLdHPzTsIXF4Kb94=
 install:
 - mvn -N io.takari:maven:wrapper
 - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V 
